@@ -14,13 +14,29 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.clickHandler = this.clickHandler.bind(this);
+    this.keyDownHandler = this.keyDownHandler.bind(this);
+  }
+  componentWillMount() {
+    document.addEventListener('keydown', this.keyDownHandler.bind(this));
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.keyDownHandler.bind(this));
+  }
+  keyDownHandler(e) {
+    const keyPressed = e.key.toUpperCase();
+    playSound(keyPressed);
   }
   clickHandler(e) {
     playSound(e.target.value);
   }
   render() {
     return (
-      <div style={wrappingDivStyle}>
+      <div
+        tabIndex="0"
+        onKeyDown={e => this.keyDownHandler(e)}
+        style={wrappingDivStyle}
+      >
         <Table>
           <tbody>
             <tr>
