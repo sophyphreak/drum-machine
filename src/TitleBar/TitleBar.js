@@ -1,17 +1,10 @@
 import React from 'react';
-
-const h1Style = {
-  textAlign: 'center'
-};
-
-const h3Style = {
-  textAlign: 'center'
-};
+import { h1Style, h4Style } from './TitleBarStyle';
 
 const TitleBar = () => (
   <div>
     <h1 style={h1Style}>Drum Machine</h1>
-    <h3 style={h3Style}>by Andrew Horn</h3>
+    <h4 style={h4Style}>by Andrew Horn</h4>
   </div>
 );
 
