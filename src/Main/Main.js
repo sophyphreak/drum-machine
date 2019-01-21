@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 import playSound from './playSound/playSound';
 import buttonMap from './buttonMap/buttonMap';
-import { wrappingDivStyle } from './MainStyles';
+import { wrappingDivStyle, pStyle } from './MainStyles';
 import Row from '../Row/Row';
 
 class Main extends Component {
@@ -43,6 +43,10 @@ class Main extends Component {
             ))}
           </tbody>
         </Table>
+        <br />
+        <p style={pStyle}>
+          These can be either clicked or activated by keypress.
+        </p>
       </div>
     );
   }
